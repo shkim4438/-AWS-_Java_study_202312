@@ -1,6 +1,17 @@
 # Compiled class file
 *.class
 
+# [IDE] Eclipse IDE, STS4, intellij
+.settings
+bin
+target
+
+.classpath
+.factorypath
+.project
+
+.idea
+
 # Log file
 *.log
 
