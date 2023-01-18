@@ -1,5 +1,7 @@
 package j01_출력;
 
+import j17_스태틱.싱글톤.KIA;
+
 public class HelloJava {
 	// 프로그램의 시작점.
 	public static void main(String[] args) {
@@ -10,7 +12,9 @@ public class HelloJava {
 		System.out.print("연락처: 010-2060-9772");
 		System.out.print("수업: AWS기반 공공빅테이터 활용 웹개발자 양성");
 		
+		System.out.println();
 		
+		KIA.getInstance().printCompanyName();
 	}
 
 }

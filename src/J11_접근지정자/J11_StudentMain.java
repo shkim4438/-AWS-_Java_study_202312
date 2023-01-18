@@ -7,8 +7,8 @@ import J11_접근지정자.default1.J11_StudentDefault;//임폴트된건 다른 
 public class J11_StudentMain {
 
 	public static void main(String[] args) {
-		J11_Student s1 = new J11_Student();
-		s1.name = "김준일";
+		J11_Student s1 = new J11_Student("김준일", 11);
+//		s1.name = "김준일";
 //		s1.age = 11;
 		
 		s1.printInfo();

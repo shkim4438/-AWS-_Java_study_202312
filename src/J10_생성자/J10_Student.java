@@ -12,24 +12,24 @@ public class J10_Student {
 //		System.out.println("기본 생성자 호출");
 //	}
 	
-	J10_Student(int age){//오버로딩은 생략되어 있는 기본 생성자를 덮어버림. 기본생성자를 출력하려면 입력해야함.
-		System.out.println("학생의 나이: " + age);
-	}
-	
-	J10_Student(String name){
-		System.out.println("학생의 이름: " + name);
-	}
-	
-//	J10_Student(String name, int age){
-//		this.name = name;
-//		this.age = age;	
-//	}
-	
-	
-//	void printInfo(){
-//		System.out.println("학생의 이름: " + name);
+//	J10_Student(int age){//오버로딩은 생략되어 있는 기본 생성자를 덮어버림. 기본생성자를 출력하려면 입력해야함.
 //		System.out.println("학생의 나이: " + age);
 //	}
+//	
+//	J10_Student(String name){
+//		System.out.println("학생의 이름: " + name);
+//	}
+	
+	J10_Student(String name, int age){
+		this.name = name;
+		this.age = age;	
+	}
+	
+	
+	void printInfo(){
+		System.out.println("학생의 이름: " + name);
+		System.out.println("학생의 나이: " + age);
+	}
 	
 	//각 메소드안에 지역변수가 있는데 클래스에서 선언한 전역인 맴버변수와 변수명이 같다 허나 이들은
 	//오류가 뜨지 않고 (본래 오류가 떠야함) 변수명이 같아 구별 하기가 어렵다. 이를 구별할수 있는것이 바로 
