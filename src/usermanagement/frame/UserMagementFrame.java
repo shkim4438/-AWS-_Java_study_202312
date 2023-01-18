@@ -162,6 +162,12 @@ public class UserMagementFrame extends JFrame {
 		forgotpasswordLink.setHorizontalAlignment(SwingConstants.CENTER);
 		forgotpasswordLink.setBounds(95, 439, 196, 17);
 		loginPanel.add(forgotpasswordLink);
+		forgotpasswordLink.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("비밀번호를 잊음.");
+			}
+		});
 		
 		JPanel registerPanel = new JPanel();
 		registerPanel.setBackground(new Color(255, 255, 255));
