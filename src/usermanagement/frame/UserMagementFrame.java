@@ -115,9 +115,25 @@ public class UserMagementFrame extends JFrame {
 		loginPanel.add(passwordLabel);
 		
 		JButton loginButton = new JButton("Login");
-		loginButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		loginButton.addMouseListener(new MouseAdapter() {
+			private void mouseCliked(MouseEvent e) {
+				JsonObject loginUser = new JsonObject();
+				loginUser.addProperty("usernameAndEmail", usernameField.getText());
+				loginUser.addProperty("password", passwordField.getText());
+				
+				UserService userService = UserService.getInstance();
+				
+				Map<String, String> response = userService.authorize(loginUser.toString());
+				
+				if(response.containsKey("error")) {
+					JOptionPane.showMessageDialog(null, response.get("error"), "error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				
+				JOptionPane.showMessageDialog(null, response.get("ok"), "ok", JOptionPane.INFORMATION_MESSAGE);
 			}
+			
 		});
 		loginButton.setFont(new Font("HY엽서L", Font.PLAIN, 18));
 		loginButton.setBounds(12, 362, 362, 33);
