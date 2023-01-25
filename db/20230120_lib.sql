@@ -24,7 +24,7 @@ select
 select
 	student_id,
     student_name,
-    '김준일' as instructor_name
+	'김준일' as instructor_name
 from	
 	student_mst;
 
@@ -47,8 +47,9 @@ where
 					mentor_id
 				from
 					mentor_mst
-				where
+				where -- where은 조건식으로 select에서 쓰면 true or false중 true인 값만 출력함.
 					mentor_name = '문자영');
+				-- mentor_name = '문자영'인 값이 (form)mentor_mst에서 동일한 값만 조회한다.
                     
 select 
 	student_id,
@@ -91,7 +92,7 @@ from
 group by
 	mentor_id
 having -- 그룹을 지어준 다음 그 그룹들에 조건을 걸어서 쓸때 씀.
-	mentor_count= 6 ;
+	mentor_count = 6 ;
 
 /* 정렬 */
 select
