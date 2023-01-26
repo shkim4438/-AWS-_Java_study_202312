@@ -116,14 +116,15 @@ public class UserMagementFrame extends JFrame {
 		
 		JButton loginButton = new JButton("Login");
 		
+		
 		loginButton.addMouseListener(new MouseAdapter() {
-			private void mouseCliked(MouseEvent e) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				JsonObject loginUser = new JsonObject();
 				loginUser.addProperty("usernameAndEmail", usernameField.getText());
 				loginUser.addProperty("password", passwordField.getText());
 				
 				UserService userService = UserService.getInstance();
-				
 				Map<String, String> response = userService.authorize(loginUser.toString());
 				
 				if(response.containsKey("error")) {
@@ -133,8 +134,11 @@ public class UserMagementFrame extends JFrame {
 				
 				JOptionPane.showMessageDialog(null, response.get("ok"), "ok", JOptionPane.INFORMATION_MESSAGE);
 			}
-			
 		});
+			
+		
+			
+	
 		loginButton.setFont(new Font("HY엽서L", Font.PLAIN, 18));
 		loginButton.setBounds(12, 362, 362, 33);
 		loginPanel.add(loginButton);
